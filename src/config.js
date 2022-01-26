@@ -5,9 +5,9 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
-const baseUri = "ipfs://NewUriToReplace";
+const namePrefix = "Furpunks!";
+const description = "Pixel cats with attitude.";
+const baseUri = "ipfs://test";
 
 const solanaMetadata = {
   symbol: "YC",
@@ -15,7 +15,9 @@ const solanaMetadata = {
   external_url: "https://www.youtube.com/c/hashlipsnft",
   creators: [
     {
+      // Change this address to YOUR Solana wallet address so that you recieve your royalties.
       address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
+      // royalty percentage that goes to your address above.
       share: 100,
     },
   ],
@@ -24,15 +26,13 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
+    // Your edition size. Change the value from 5 to whatever number of NFTs you would like to generate.
     growEditionSizeTo: 5,
     layersOrder: [
-      { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "Background" , },
+      { name: "Body Colour" },
+      { name: "Eyes" },
+      { name: "Colar" },
     ],
   },
 ];
@@ -42,8 +42,8 @@ const shuffleLayerConfigurations = false;
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 150,
+  height: 150,
   smoothing: false,
 };
 
@@ -72,7 +72,7 @@ const pixelFormat = {
 };
 
 const background = {
-  generate: true,
+  generate: false,
   brightness: "80%",
   static: false,
   default: "#000000",
